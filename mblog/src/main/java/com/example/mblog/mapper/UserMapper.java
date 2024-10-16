@@ -16,7 +16,7 @@ public interface UserMapper {
     @Select("select username from user where account = #{account} && password = #{password}")
     public String list2(User user);
 
-    @Insert("insert into user(account, password, username, avator, points, intro, id) values(#{account},#{password},'www','error',0,'null',2);")
+    @Insert("insert into user(account, password, username, avator, points, intro) values(#{account},#{password},#{account},'error',0,'null');")
     public Integer regis(User user);
 
     @Select("select id from user where account = #{account} && password = #{password}")

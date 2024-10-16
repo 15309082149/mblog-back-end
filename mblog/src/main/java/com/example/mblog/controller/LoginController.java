@@ -17,6 +17,7 @@ public class LoginController {
     private UserMapper usermapper;
     @RequestMapping("/login")
     public Integer Login(User user, HttpSession session) {
+        System.out.println(user);
         Integer id = login.list(user);
         String username = usermapper.list2(user);
         session.setAttribute("user",username);
